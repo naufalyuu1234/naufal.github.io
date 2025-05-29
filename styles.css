@@ -19,18 +19,6 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
-/* navigation */
-nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 1rem 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
 /* Nav container */
 /* Navigation */
 nav {
