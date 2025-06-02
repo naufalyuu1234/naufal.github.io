@@ -132,6 +132,7 @@ nav {
   color: #000000;
   font-size: 16px;
 }
+/* Contact Container (Right) END */
 
 /* Hamburger Menu Styles */
 .hamburger-menu {
@@ -151,13 +152,14 @@ nav {
   background-color: white;
   transition: all 0.3s ease;
 }
+/* Hamburger Menu Styles End*/
 
 /* Main content spacing */
 main {
   margin-top: 120px; /* Space for fixed navbar */
 }
 
-/* Demo content */
+/* Content Section */
 .content-section {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.1);
@@ -167,6 +169,96 @@ main {
   color: white;
 }
 
+/* Home Section */
+.content-section#Home {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+  padding: 4rem 2rem;
+  /* Visual */
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Animation */
+  animation: fadeIn 1s ease-in-out;
+}
+.content-section#Home h2 {
+  /* typography */
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #a0c4e4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* spacing */
+  margin-bottom: 2rem;
+  /* Animation */
+  animation: slideDown 0.8s ease-out;
+}
+.content-section#Home p {
+  /* typography */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  /* spacing */
+  margin-bottom: 1.5rem;
+  /* Animation */
+  animation: fadeIn 1s ease-in-out;
+}
+/* Call to Action Button */
+.cta-button {
+  /* Layout */
+  display: inline-block;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+
+  /* Typography */
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+
+  /* Visual */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50px;
+  border: none;
+
+  /* Animation */
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* Mobile Styles - IMPROVED */
 @media (max-width: 768px) {
   .nav-pill.nav-status,
@@ -181,8 +273,6 @@ main {
   .hamburger-menu {
     display: block;
   }
-
-  /* IMPROVED DROPDOWN STYLES */
   .nav-links {
     position: fixed;
     right: -100%; /* Start from right side */
@@ -289,5 +379,28 @@ main {
   /* Adjust main content for mobile */
   main {
     margin-top: 100px;
+  }
+
+  /* Home Section */
+  .content-section#Home {
+    padding: 3rem 1.5rem;
+    min-height: calc(100vh - 90px);
+  }
+  .content-section#Home h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+  .content-section#Home p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .content-section#Home button {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .content-section#Home button:hover {
+    transform: translateY(-2px) scale(1.03);
   }
 }
