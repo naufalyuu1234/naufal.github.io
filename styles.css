@@ -8,7 +8,7 @@ body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
-  color: #333;
+  position: relative;
   overflow-x: hidden;
 }
 
@@ -90,7 +90,6 @@ nav {
   color: white;
   font-size: 16px;
 }
-
 .nav-links {
   display: flex;
   gap: 2rem;
