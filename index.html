@@ -42,102 +42,89 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-   <div class="progress-bar" id="progressBar"></div>
-    
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Floating Shapes -->
     <div class="floating-shapes">
-        <div class="shape" style="width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
-        <div class="shape" style="width: 150px; height: 150px; background: rgba(255,255,255,0.05); border-radius: 20px;"></div>
-        <div class="shape" style="width: 80px; height: 80px; background: rgba(255,255,255,0.08); border-radius: 50%;"></div>
+      <div class="shape shape-circle-small"></div>
+      <div class="shape shape-square"></div>
+      <div class="shape shape-circle-large"></div>
     </div>
 
-    <nav>
-        <div class="container">
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
 
+    <!-- Main Content -->
+    <main>
+      <!-- Navigation -->
+      <nav>
+        <div class="container">
           <div class="nav-container">
-            <!-- Status Container (Left) -->
             <div class="nav-pill nav-status">
               <div class="status-dot"></div>
               <span>available for projects</span>
             </div>
 
-            <!-- Main Menu Container (Center) -->
             <div class="nav-pill nav-main">
               <div class="nav-logo"></div>
-              <ul class="nav-links">
+              <ul class="nav-links" id="navLinks">
                 <li><a href="#works">Home</a></li>
-                <li><a href="#benefits">Learn Path</a></li>
+                <li><a href="#benefits">Learn</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#process">Connect with me</a></li>
+                <li><a href="#process">Connect</a></li>
               </ul>
             </div>
 
-            <!-- Contact Container (Right) -->
             <div class="nav-pill nav-contact">
               <div class="contact-icon"></div>
               <span>Naufalyuu62@gmail.com</span>
             </div>
+
+            <button
+              class="hamburger-menu"
+              id="hamburgerMenu"
+              aria-label="Toggle Menu"
+            >
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
           </div>
         </div>
-    </nav>
+      </nav>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Perjalanan Belajar Developer</h1>
-            <p>Ikuti petualangan saya dalam menguasai teknologi web development dari dasar hingga mahir</p>
-            <a href="#learning" class="cta-button">Mulai Belajar Sekarang</a>
-        </div>
-    </section>
+      <!-- Demo Content -->
+      <div class="container">
+        <section id="works" class="content-section">
+          <h2>Home Section</h2>
+          <p>
+            This is your home content. The mobile menu now slides in from the
+            right and won't block this content.
+          </p>
+        </section>
 
-    <section class="learning-section" id="learning">
-        <div class="container">
-            <h2 class="section-title">Kategori Pembelajaran</h2>
-            <div class="learning-grid">
-                <div class="learning-card html-card" onclick="navigateToLearning('html')">
-                    <div class="card-icon">
-                        &lt;/&gt;
-                    </div>
-                    <h3 class="card-title">HTML</h3>
-                    <p class="card-description">
-                        Pelajari struktur dasar website dengan HTML. Dari tag sederhana hingga semantic markup yang modern.
-                    </p>
-                    <a href="#html-learning" class="card-button">Mulai HTML</a>
-                </div>
+        <section id="benefits" class="content-section">
+          <h2>Learn Section</h2>
+          <p>
+            Your learning content goes here. The improved mobile navigation
+            provides a better user experience.
+          </p>
+        </section>
 
-                <div class="learning-card css-card" onclick="navigateToLearning('css')">
-                    <div class="card-icon">
-                        { }
-                    </div>
-                    <h3 class="card-title">CSS</h3>
-                    <p class="card-description">
-                        Berikan style dan animasi pada website Anda. Mulai dari basic styling hingga advanced animations.
-                    </p>
-                    <a href="#css-learning" class="card-button">Mulai CSS</a>
-                </div>
+        <section id="about" class="content-section">
+          <h2>About Section</h2>
+          <p>About content with proper spacing from the fixed navigation.</p>
+        </section>
 
-                <div class="learning-card js-card" onclick="navigateToLearning('javascript')">
-                    <div class="card-icon">
-                        JS
-                    </div>
-                    <h3 class="card-title">JavaScript</h3>
-                    <p class="card-description">
-                        Tambahkan interaktivitas ke website Anda. Pelajari programming logic dan DOM manipulation.
-                    </p>
-                    <a href="#js-learning" class="card-button">Mulai JavaScript</a>
-                </div>
-
-                <div class="learning-card react-card" onclick="navigateToLearning('react')">
-                    <div class="card-icon">
-                        ⚛
-                    </div>
-                    <h3 class="card-title">React</h3>
-                    <p class="card-description">
-                        Bangun aplikasi web modern dengan React. Component-based architecture untuk UI yang powerful.
-                    </p>
-                    <a href="#react-learning" class="card-button">Mulai React</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section id="process" class="content-section">
+          <h2>Connect Section</h2>
+          <p>
+            Connect content is now properly visible without interference from
+            the mobile menu.
+          </p>
+        </section>
+      </div>
     </main>
   </body>
   <script src="./script.js"></script>
