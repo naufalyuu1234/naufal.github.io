@@ -44,67 +44,89 @@
   <body>
     <!-- Progress bar -->
     <div class="progress-bar" id="progressBar"></div>
+
     <!-- Floating Shapes -->
     <div class="floating-shapes">
-      <div
-        class="shape"
-        style="
-          width: 100px;
-          height: 100px;
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 50%;
-        "
-      ></div>
-      <div
-        class="shape"
-        style="
-          width: 150px;
-          height: 150px;
-          background: rgba(255, 255, 255, 0.5);
-          border-radius: 20px;
-        "
-      ></div>
-      <div
-        class="shape"
-        style="
-          width: 80px;
-          height: 80px;
-          background: rgba(255, 255, 255, 0.8);
-          border-radius: 50%;
-        "
-      ></div>
-      <!-- Floating shapes and -->
+      <div class="shape shape-circle-small"></div>
+      <div class="shape shape-square"></div>
+      <div class="shape shape-circle-large"></div>
+    </div>
 
-      <!-- Navigasi -->
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Navigation -->
       <nav>
         <div class="container">
           <div class="nav-container">
-            <!-- Status Container (Left) -->
             <div class="nav-pill nav-status">
               <div class="status-dot"></div>
               <span>available for projects</span>
             </div>
 
-            <!-- Main Menu Container (Center) -->
             <div class="nav-pill nav-main">
               <div class="nav-logo"></div>
-              <ul class="nav-links">
+              <ul class="nav-links" id="navLinks">
                 <li><a href="#works">Home</a></li>
-                <li><a href="#benefits">Learn Path</a></li>
+                <li><a href="#benefits">Learn</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#process">Connect with me</a></li>
+                <li><a href="#process">Connect</a></li>
               </ul>
             </div>
 
-            <!-- Contact Container (Right) -->
             <div class="nav-pill nav-contact">
               <div class="contact-icon"></div>
               <span>Naufalyuu62@gmail.com</span>
             </div>
+
+            <button
+              class="hamburger-menu"
+              id="hamburgerMenu"
+              aria-label="Toggle Menu"
+            >
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
           </div>
         </div>
       </nav>
-      <!-- Navigasi End -->
-    </div>
+
+      <!-- Demo Content -->
+      <div class="container">
+        <section id="works" class="content-section">
+          <h2>Home Section</h2>
+          <p>
+            This is your home content. The mobile menu now slides in from the
+            right and won't block this content.
+          </p>
+        </section>
+
+        <section id="benefits" class="content-section">
+          <h2>Learn Section</h2>
+          <p>
+            Your learning content goes here. The improved mobile navigation
+            provides a better user experience.
+          </p>
+        </section>
+
+        <section id="about" class="content-section">
+          <h2>About Section</h2>
+          <p>About content with proper spacing from the fixed navigation.</p>
+        </section>
+
+        <section id="process" class="content-section">
+          <h2>Connect Section</h2>
+          <p>
+            Connect content is now properly visible without interference from
+            the mobile menu.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
   </body>
 </html>

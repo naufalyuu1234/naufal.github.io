@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* body */
+
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -12,17 +12,15 @@ body {
   overflow-x: hidden;
 }
 
-/* NAVIGATION */
-/* container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
-/* Nav container */
+
 /* Navigation */
 nav {
-  background: #a0c4e4;
+  background: #000;
   padding: 1.5rem 0;
   position: fixed;
   width: 100%;
@@ -136,4 +134,161 @@ nav {
   font-size: 16px;
 }
 
-/* NAVIGATION END */
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Main content spacing */
+main {
+  margin-top: 120px; /* Space for fixed navbar */
+}
+
+/* Demo content */
+.content-section {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+/* Mobile Styles - IMPROVED */
+@media (max-width: 768px) {
+  .nav-pill.nav-status,
+  .nav-pill.nav-contact {
+    display: none;
+  }
+
+  .nav-main {
+    flex: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* IMPROVED DROPDOWN STYLES */
+  .nav-links {
+    position: fixed;
+    right: -100%; /* Start from right side */
+    top: 90px; /* Below navbar */
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    width: 280px; /* Wider for better touch targets */
+    min-height: calc(100vh - 90px); /* Full height minus navbar */
+    padding: 2rem 1rem;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 0 20px;
+    overflow-y: auto; /* Scroll if content is too long */
+  }
+
+  .nav-links.active {
+    right: 0; /* Slide in from right */
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Stagger animation for menu items */
+  .nav-links.active li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .nav-links.active li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .nav-links.active li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .nav-links.active li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem;
+    color: #333;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-links a:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    transform: scale(1.02);
+  }
+
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  .nav-main {
+    flex: 0;
+  }
+
+  /* Hamburger Animation */
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Overlay to close menu when clicking outside */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Adjust main content for mobile */
+  main {
+    margin-top: 100px;
+  }
+}
