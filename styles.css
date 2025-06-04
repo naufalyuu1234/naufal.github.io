@@ -237,6 +237,139 @@ main {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
+/* Home Section End */
+
+/* Hooks Section */
+.hooks-section {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  margin: 2rem 0;
+  /* Visual */
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  /* Animation */
+  animation: fadeIn 1s ease-in-out;
+}
+/* Hoks title */
+.hooks-title {
+  /* typography */
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #a0c4e4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* spacing */
+  margin-bottom: 3rem;
+}
+/* Hoks Grid */
+.hooks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 3rem;
+}
+/* Hooks Items */
+/* Layout */
+.hook-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  /* Visual */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  /* Animation */
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+/* hooks item hover */
+.hook-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+/* hook icon */
+.hook-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.hook-item:hover .hook-icon {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+/* Hooks Content */
+.hook-content {
+  flex: 1;
+}
+/* Hooks title */
+.hook-title-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+/* Hooks Description */
+.hook-description {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+/* Hooks button */
+.hooks-cta {
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50px;
+  border: none;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.hooks-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+/* Stagger animation untuk hook items */
+.hook-item:nth-child(1) {
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+.hook-item:nth-child(2) {
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+.hook-item:nth-child(3) {
+  animation: fadeIn 0.8s ease-out 0.6s both;
+}
+.hook-item:nth-child(4) {
+  animation: fadeIn 0.8s ease-out 0.8s both;
+}
+.hook-item:nth-child(5) {
+  animation: fadeIn 0.8s ease-out 1s both;
+}
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -402,5 +535,44 @@ main {
 
   .content-section#Home button:hover {
     transform: translateY(-2px) scale(1.03);
+  }
+  /* Hooks Section */
+  .hooks-section {
+    padding: 3rem 1.5rem;
+    min-height: auto;
+  }
+
+  .hooks-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .hooks-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hook-item {
+    padding: 1.25rem;
+  }
+
+  .hook-icon {
+    font-size: 1.8rem;
+    width: 45px;
+    height: 45px;
+  }
+
+  .hook-title-text {
+    font-size: 1.1rem;
+  }
+
+  .hook-description {
+    font-size: 0.9rem;
+  }
+
+  .hooks-cta {
+    padding: 0.875rem 2rem;
+    font-size: 0.75rem;
   }
 }
