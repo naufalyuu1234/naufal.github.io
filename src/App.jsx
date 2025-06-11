@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen ">
       <Navbar />
       <main className="pt-16">
         <Routes>

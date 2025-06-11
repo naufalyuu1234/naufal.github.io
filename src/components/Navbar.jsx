@@ -2,18 +2,16 @@ import { useState, useEffect } from "react";
 import { FiMenu, FiX, FiRefreshCw, FiMoon, FiSun } from "react-icons/fi";
 import IconButton from "./ui/IconButton";
 import NavLink from "./NavLink";
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { darkMode, setDarkMode } = useTheme();
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   // Toggle dark mode and save preference
   const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    document.documentElement.classList.toggle("dark", newMode);
-    localStorage.setItem("darkMode", newMode);
+    setDarkMode((prev) => !prev);
   };
 
   // Handle refresh with loading state
@@ -37,16 +35,9 @@ const Navbar = () => {
     return () => window.removeEventListener("popstate", handleRouteChange);
   }, [isMenuOpen]);
 
-  // Check for saved dark mode preference
-  useEffect(() => {
-    const savedMode = localStorage.getItem("darkMode") === "true";
-    setIsDarkMode(savedMode);
-    document.documentElement.classList.toggle("dark", savedMode);
-  }, []);
-
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-sm border-b border-gray-200 dark:border-gray-700"
+      className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900/80 backdrop-blur-lg shadow-sm border-b border-gray-200 dark:border-gray-700"
       aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,8 +77,8 @@ const Navbar = () => {
                 isLoading={isRefreshing}
               />
               <IconButton
-                icon={isDarkMode ? FiSun : FiMoon}
-                label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+                icon={darkMode ? FiSun : FiMoon}
+                label={`Switch to ${darkMode ? "light" : "dark"} mode`}
                 onClick={toggleDarkMode}
               />
             </div>
@@ -132,8 +123,8 @@ const Navbar = () => {
               className="text-gray-700 dark:text-gray-200"
             />
             <IconButton
-              icon={isDarkMode ? FiSun : FiMoon}
-              label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+              icon={darkMode ? FiSun : FiMoon}
+              label={`Switch to ${darkMode ? "light" : "dark"} mode`}
               onClick={toggleDarkMode}
               className="text-gray-700 dark:text-gray-200"
             />

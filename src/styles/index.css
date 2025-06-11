@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+body {
+  background: white;
+}
+
+html.dark body {
+  background: #111827;
+}
+/* Home */
+.home h1 {
+  color: black;
+}
+
+html.dark .home h1 {
+  color: white;
+}
